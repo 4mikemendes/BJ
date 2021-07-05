@@ -1,4 +1,18 @@
 
+.butons {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+body{
+ background-image: url(zen.png);
+   margin: auto;
+  width: 100%;
+  padding: 10px;
+ background-size: cover;
+}
 button {
   background: #fcc15a;
     border: none;
@@ -7,6 +21,15 @@ button {
     color: #8892a8;
     font-weight: bold;
     width: 200px;
-    margin-bottom: 5px;
-    border-radius: 5px;
+
+    border-radius: 20px;
+}
+
+h1{
+  background: #fcc20a;
+
+}
+
+h1,h2 {
+   text-align: center;
 }
