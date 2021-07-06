@@ -24,19 +24,25 @@
 
 let firstCard = Math.floor((Math.random()*11) + 2);
 let secondCard = Math.floor((Math.random()*11) + 2);
+let sum = firstCard + secondCard
+
 // let firstCard = 19
 // let secondCard = 2
-let sum = firstCard + secondCard
+
+// let result = firstCard + secondCard
 let blackJack = false
 let isAlive = false
 let message = " "
 let messageEl =  document.getElementById("message-el")
-
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.getElementById("cards-el")
 console.log(firstCard)
 console.log(secondCard)
 console.log(sum)
-console.log(message)
-console.log(messageEl)
+
+// console.log(message)
+// console.log(messageEl)
+
 
 function start() {
 
@@ -52,11 +58,19 @@ if (sum < 21 ) {
   isAlive = false
 }
   messageEl.textContent = message
-
+  sumEl.textContent = "Sum: " + sum
+  cardsEl.textContent = "Cards: " + firstCard + " " + "and " + secondCard
 }
 
 
+  function newCard() {
 
+    let thirdCard = Math.floor((Math.random()*11) + 2);
+
+    sum += thirdCard
+    start()
+    console.log(thirdCard)
+  }
 
 
 
