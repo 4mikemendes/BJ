@@ -25,6 +25,7 @@
 let firstCard = Math.floor((Math.random()*11) + 2);
 let secondCard = Math.floor((Math.random()*11) + 2);
 let sum = firstCard + secondCard
+let cards = [firstCard, secondCard]
 let blackJack = false
 let isAlive = false
 let message = " "
@@ -55,18 +56,27 @@ if (sum < 21 ) {
 }
   messageEl.textContent = message
   sumEl.textContent = "Sum: " + sum
-  cardsEl.textContent = "Cards: " + firstCard + " " + "and " + secondCard
+  cardsEl.textContent = "Cards: " + cards
 }
 
 
   function newCard() {
 
     let thirdCard = Math.floor((Math.random()*11) + 2);
-
+    cards.push(thirdCard)
     sum += thirdCard
     renderGame()
     console.log(thirdCard)
   }
+
+
+
+
+
+
+
+
+
 
 
 
