@@ -22,19 +22,23 @@
 //set teir value to random between 2-11
 //create a variable sum and set it to sum the two variables above
 
-// let firstCard = Math.floor((Math.random()*11) + 2);
-// let secondCard = Math.floor((Math.random()*11) + 2);
-let firstCard = 19
-let secondCard = 2
+let firstCard = Math.floor((Math.random()*11) + 2);
+let secondCard = Math.floor((Math.random()*11) + 2);
+// let firstCard = 19
+// let secondCard = 2
 let sum = firstCard + secondCard
 let blackJack = false
 let isAlive = false
 let message = " "
+let messageEl =  document.getElementById("message-el")
+
 console.log(firstCard)
 console.log(secondCard)
 console.log(sum)
 console.log(message)
+console.log(messageEl)
 
+function start() {
 
 if (sum < 21 ) {
   message = "Do you want another card?"
@@ -47,10 +51,9 @@ if (sum < 21 ) {
   message = "You have lost! Try again!"
   isAlive = false
 }
+  messageEl.textContent = message
 
-console.log(message)
-
-
+}
 
 
 
