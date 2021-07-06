@@ -25,11 +25,6 @@
 let firstCard = Math.floor((Math.random()*11) + 2);
 let secondCard = Math.floor((Math.random()*11) + 2);
 let sum = firstCard + secondCard
-
-// let firstCard = 19
-// let secondCard = 2
-
-// let result = firstCard + secondCard
 let blackJack = false
 let isAlive = false
 let message = " "
@@ -40,11 +35,12 @@ console.log(firstCard)
 console.log(secondCard)
 console.log(sum)
 
-// console.log(message)
-// console.log(messageEl)
-
 
 function start() {
+  renderGame()
+}
+
+function renderGame() {
 
 if (sum < 21 ) {
   message = "Do you want another card?"
@@ -68,7 +64,7 @@ if (sum < 21 ) {
     let thirdCard = Math.floor((Math.random()*11) + 2);
 
     sum += thirdCard
-    start()
+    renderGame()
     console.log(thirdCard)
   }
 
