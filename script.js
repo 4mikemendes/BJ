@@ -22,6 +22,11 @@
 //set teir value to random between 2-11
 //create a variable sum and set it to sum the two variables above
 
+// for (let count = 10; count < 101; count += 10) {
+//   console.log(count)
+
+// }
+
 let firstCard = Math.floor((Math.random()*11) + 2);
 let secondCard = Math.floor((Math.random()*11) + 2);
 let sum = firstCard + secondCard
@@ -68,7 +73,6 @@ if (sum < 21 ) {
     renderGame()
     console.log(thirdCard)
   }
-
 
 
 
