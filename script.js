@@ -107,6 +107,7 @@ function renderGame() {
   if (sum < 21 ) {
     message = "Do you want another card?"
     isAlive = true
+    blackJack = true
   } else if (sum === 21) {
     message = "You have won!"
     isAlive = true
@@ -122,11 +123,13 @@ function renderGame() {
 
 
 function newCard() {
+  if (isAlive || blackJack === false) {
   let thirdCard = getRandomCard();
   console.log(thirdCard)
   cards.push(thirdCard)
   sum += thirdCard
   renderGame()
+  }
 }
 
 
