@@ -24,62 +24,110 @@
 
 // for (let count = 10; count < 101; count += 10) {
 //   console.log(count)
-
 // }
 
-let firstCard = Math.floor((Math.random()*11) + 2);
-let secondCard = Math.floor((Math.random()*11) + 2);
-let sum = firstCard + secondCard
-let cards = [firstCard, secondCard]
+// let cards = [3, 4, 5 ,56, 34, 52]
+// for (let i = 0; i < cards.length; i++) {
+//   console.log(cards[i])
+// }
+
+// foreach
+// let sentence = ["sergio", "miguel", "pinto", "domingos", "guerreiro", "mendes"]
+// let greetingsEl = document.getElementById("greetings-el")
+// for (let i = 0; i < sentence.length; i++) {
+//    greetingsEl.textContent += sentence[i] + " "
+//    console.log(i[sentence])
+// }
+
+
+// adding two values
+// let playerOneTime = 120
+// let playerTwoTime = 100
+// function getTimeFastest() {
+//   if (playerOneTime < playerTwoTime) {
+//     return playerOneTime
+//   } else if (playerTwoTime < playerOneTime) {
+//     return playerTwoTime
+//   } else {
+//     return playerOneTime
+//   }
+// }
+// function totalRaceTime() {
+//   return playerOneTime + playerTwoTime
+// }
+//   let total = totalRaceTime()
+// console.log(total)
+
+
+// dice
+// function dice() {
+// let randomNumber = Math.floor(Math.random() * 6) + 1
+// return randomNumber
+// }
+// console.log(dice())
+
+
+
+
+
+let cards = []
+let sum = 0
 let blackJack = false
 let isAlive = false
 let message = " "
 let messageEl =  document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
-console.log(firstCard)
-console.log(secondCard)
-console.log(sum)
+
+
+function getRandomCard(){
+  let result = Math.floor((Math.random()*13) + 1);
+  if (result > 10 ) {
+    return 10
+  }else if (result === 1) {
+    return 10
+  }else {
+    return result
+  }
+}
 
 
 function start() {
+  isAlive = true
+  let firstCard = getRandomCard();
+  let secondCard = getRandomCard();
+  sum = firstCard + secondCard
+  cards = [firstCard, secondCard]
+
   renderGame()
 }
 
-function renderGame() {
 
-if (sum < 21 ) {
-  message = "Do you want another card?"
-  isAlive = true
-} else if (sum === 21) {
-  message = "You have won!"
-  isAlive = true
-  blackJack = true
-} else {
-  message = "You have lost! Try again!"
-  isAlive = false
-}
+function renderGame() {
+  if (sum < 21 ) {
+    message = "Do you want another card?"
+    isAlive = true
+  } else if (sum === 21) {
+    message = "You have won!"
+    isAlive = true
+    blackJack = true
+  } else {
+    message = "You have lost! Try again!"
+    isAlive = false
+  }
   messageEl.textContent = message
   sumEl.textContent = "Sum: " + sum
-  cardsEl.textContent = "Cards: " + cards
+  cardsEl.textContent = "Cards:" + cards
 }
 
 
-  function newCard() {
-
-    let thirdCard = Math.floor((Math.random()*11) + 2);
-    cards.push(thirdCard)
-    sum += thirdCard
-    renderGame()
-    console.log(thirdCard)
-  }
-
-
-
-
-
-
-
+function newCard() {
+  let thirdCard = getRandomCard();
+  console.log(thirdCard)
+  cards.push(thirdCard)
+  sum += thirdCard
+  renderGame()
+}
 
 
 
