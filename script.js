@@ -69,7 +69,7 @@
 
 
 
-
+let player = { name: "mike", chips: 0}
 let cards = []
 let sum = 0
 let blackJack = false
@@ -78,7 +78,9 @@ let message = " "
 let messageEl =  document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
+let playerEl = document.getElementById("player-el")
 
+playerEl.textContent = player.name + ": " + player.chips + "$"
 
 function getRandomCard(){
   let result = Math.floor((Math.random()*13) + 1);
